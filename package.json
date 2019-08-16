@@ -24,6 +24,7 @@
     "tap-nirvana": "1.1.0",
     "tap-nyc": "1.0.3",
     "tape": "4.11.0",
+    "tslint": "5.18.0",
     "typescript": "3.5.3"
   }
 }
