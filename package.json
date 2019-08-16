@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "@types/tape": "4.2.33",
+    "nyc": "14.1.1",
     "tap-nirvana": "1.1.0",
     "tape": "4.11.0",
     "typescript": "3.5.3"
