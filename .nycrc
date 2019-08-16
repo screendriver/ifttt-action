@@ -7,6 +7,9 @@
   "include": [
     "target/src/**/*.js"
   ],
+  "exclude": [
+    "target/src/index.js"
+  ],
   "reporter": [
     "lcov",
     "text"
