@@ -61,7 +61,8 @@ test('calls setFailed() when an error occurred', async t => {
       (core as unknown) as typeof actionsCore,
       (got as unknown) as GotInstance,
     );
-  } catch {}
-  sinon.assert.calledWith(core.setFailed, 'Test error');
-  t.pass();
+  } catch {
+    sinon.assert.calledWith(core.setFailed, 'Test error');
+    t.pass();
+  }
 });
