@@ -5,6 +5,9 @@
   "main": "target/src/index.js",
   "author": "Christian Rackerseder <git@echooff.de>",
   "license": "MIT",
+  "scripts": {
+    "compile": "tsc --build"
+  },
   "devDependencies": {
     "typescript": "3.5.3"
   }
