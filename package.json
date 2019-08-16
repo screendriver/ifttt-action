@@ -14,6 +14,7 @@
     "test:unit:coverage": "nyc tape -r source-map-support/register 'target/test/**/*.js' | tap-nyc"
   },
   "dependencies": {
+    "@actions/core": "1.0.0",
     "tslib": "1.10.0"
   },
   "devDependencies": {
