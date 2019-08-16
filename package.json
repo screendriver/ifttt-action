@@ -1,6 +1,6 @@
 {
   "name": "ifttt-action",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "GitHub action that triggers an IFTTT webhooks event",
   "main": "target/src/index.js",
   "author": "Christian Rackerseder <git@echooff.de>",
