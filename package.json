@@ -7,6 +7,7 @@
   "license": "MIT",
   "scripts": {
     "compile": "tsc --build",
+    "lint": "tslint -c tslint.json 'src/**/*.ts' 'test/**/*.ts'",
     "copy:paste:detector": "jscpd src test",
     "prettier:check": "prettier --check 'src/**/*.ts?(x)' 'test/**/*.ts?(x)'",
     "test:unit": "tape -r source-map-support/register 'target/test/**/*.js' | tap-nirvana",
