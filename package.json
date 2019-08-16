@@ -9,6 +9,7 @@
     "compile": "tsc --build"
   },
   "devDependencies": {
+    "@types/tape": "4.2.33",
     "tape": "4.11.0",
     "typescript": "3.5.3"
   }
