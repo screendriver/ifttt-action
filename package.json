@@ -7,6 +7,7 @@
   "license": "MIT",
   "scripts": {
     "compile": "tsc --build",
+    "copy:paste:detector": "jscpd src test",
     "test:unit": "tape -r source-map-support/register 'target/test/**/*.js' | tap-nirvana",
     "test:unit:coverage": "nyc tape -r source-map-support/register 'target/test/**/*.js' | tap-nyc"
   },
