@@ -24,6 +24,7 @@
     "jscpd": "2.0.15",
     "nyc": "14.1.1",
     "prettier": "1.18.2",
+    "sinon": "7.4.1",
     "source-map-support": "0.5.13",
     "tap-nirvana": "1.1.0",
     "tap-nyc": "1.0.3",
