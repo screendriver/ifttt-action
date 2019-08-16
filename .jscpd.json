@@ -1,0 +1,8 @@
+{
+  "output": "./target",
+  "minLines": 3,
+  "threshold": 0.1,
+  "reporters": ["html", "console"],
+  "absolute": true,
+  "gitignore": true
+}
