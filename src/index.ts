@@ -1,11 +1,5 @@
 import * as core from '@actions/core';
+import got from 'got';
+import { run } from './run';
 
-try {
-  const event = core.getInput('event', { required: true });
-  const key = core.getInput('key', { required: true });
-
-  core.debug(`Event: ${event}`);
-  core.debug(`Key: ${key}`);
-} catch (error) {
-  core.setFailed(error.message);
-}
+run(core, got);
