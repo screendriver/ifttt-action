@@ -1,4 +1,4 @@
-name: IFTTT
+name: GitHub Action for IFTTT
 author: Christian Rackerseder
 description: Triggers an IFTTT webhooks event
 inputs:
