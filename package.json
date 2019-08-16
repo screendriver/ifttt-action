@@ -8,6 +8,9 @@
   "scripts": {
     "compile": "tsc --build"
   },
+  "dependencies": {
+    "tslib": "1.10.0"
+  },
   "devDependencies": {
     "@types/tape": "4.2.33",
     "nyc": "14.1.1",
