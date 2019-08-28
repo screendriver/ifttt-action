@@ -5,6 +5,7 @@
     "moduleResolution": "node",
     "noEmitOnError": true,
     "importHelpers": true,
+    "sourceMap": true,
     "declaration": true,
     "composite": true,
     "strict": true,
