@@ -22,33 +22,30 @@ function createGot() {
   };
 }
 
-test('calls getInput() with "event" name', async () => {
-  const core = createCore();
-  const got = createGot();
-  await run(
+function doRun(core = createCore(), got = createGot()) {
+  return run(
     (core as unknown) as typeof actionsCore,
     (got as unknown) as GotInstance,
   );
+}
+
+test('calls getInput() with "event" name', async () => {
+  const core = createCore();
+  await doRun(core);
   expect(core.getInput).toHaveBeenCalledWith('event', { required: true });
 });
 
 test('calls getInput() with "key" name', async () => {
   const core = createCore();
   const got = createGot();
-  await run(
-    (core as unknown) as typeof actionsCore,
-    (got as unknown) as GotInstance,
-  );
+  await doRun(core, got);
   expect(core.getInput).toHaveBeenCalledWith('key', { required: true });
 });
 
 test('calls correct ifttt.com webhook URL', async () => {
   const core = createCore();
   const got = createGot();
-  await run(
-    (core as unknown) as typeof actionsCore,
-    (got as unknown) as GotInstance,
-  );
+  await doRun(core, got);
   expect(got.post).toHaveBeenCalledWith(
     'https://maker.ifttt.com/trigger/my-event/with/key/foobar123',
   );
@@ -57,10 +54,7 @@ test('calls correct ifttt.com webhook URL', async () => {
 test('returns statusCode and body', async () => {
   const core = createCore();
   const got = createGot();
-  const { statusCode, body } = await run(
-    (core as unknown) as typeof actionsCore,
-    (got as unknown) as GotInstance,
-  );
+  const { statusCode, body } = await doRun(core, got);
   expect(statusCode).toBe(200);
   expect(body).toBe('Testbody');
 });
@@ -74,10 +68,7 @@ test('calls setFailed() when an error occurred', async () => {
     }),
   };
   try {
-    await run(
-      (core as unknown) as typeof actionsCore,
-      (got as unknown) as GotInstance,
-    );
+    await doRun(core, got);
   } catch {
     expect(core.setFailed).toHaveBeenCalledWith('Test error');
   }
