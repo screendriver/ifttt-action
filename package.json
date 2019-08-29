@@ -7,9 +7,8 @@
   "license": "MIT",
   "scripts": {
     "compile": "tsc --build",
-    "lint": "tslint -c tslint.json 'src/**/*.ts' 'test/**/*.ts'",
+    "lint": "eslint --ignore-path .gitignore --ext ts src test",
     "copy:paste:detector": "jscpd src test",
-    "prettier:check": "prettier --check 'src/**/*.ts?(x)' 'test/**/*.ts?(x)'",
     "test:unit": "tape -r source-map-support/register 'target/test/**/*.js' | tap-nirvana",
     "test:unit:coverage": "nyc tape -r source-map-support/register 'target/test/**/*.js' | tap-nyc"
   },
@@ -22,6 +21,11 @@
     "@types/got": "9.6.7",
     "@types/sinon": "7.0.13",
     "@types/tape": "4.2.33",
+    "@typescript-eslint/eslint-plugin": "2.0.0",
+    "@typescript-eslint/parser": "2.0.0",
+    "eslint": "6.2.2",
+    "eslint-config-prettier": "6.1.0",
+    "eslint-plugin-prettier": "3.1.0",
     "jscpd": "2.0.15",
     "nyc": "14.1.1",
     "prettier": "1.18.2",
@@ -30,8 +34,6 @@
     "tap-nirvana": "1.1.0",
     "tap-nyc": "1.0.3",
     "tape": "4.11.0",
-    "tslint": "5.19.0",
-    "tslint-config-prettier": "1.18.0",
     "typescript": "3.6.2"
   }
 }
