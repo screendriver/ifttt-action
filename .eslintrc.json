@@ -15,8 +15,6 @@
     "node": true
   },
   "rules": {
-    "require-atomic-updates": "off",
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/camelcase": "off"
+    "@typescript-eslint/explicit-function-return-type": "off"
   }
 }
