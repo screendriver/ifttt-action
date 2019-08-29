@@ -9,8 +9,7 @@
     "compile": "tsc --build",
     "lint": "eslint --ignore-path .gitignore --ext ts src test",
     "copy:paste:detector": "jscpd src test",
-    "test:unit": "tape -r source-map-support/register 'target/test/**/*.js' | tap-nirvana",
-    "test:unit:coverage": "nyc tape -r source-map-support/register 'target/test/**/*.js' | tap-nyc"
+    "test:unit": "jest target/test"
   },
   "dependencies": {
     "@actions/core": "1.0.0",
