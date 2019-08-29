@@ -20,4 +20,4 @@ jobs:
       - name: Compile source code
         run: yarn compile
       - name: Run tests
-        run: yarn test:unit:coverage
+        run: yarn test:unit --coverage

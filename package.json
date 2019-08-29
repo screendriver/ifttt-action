@@ -9,8 +9,7 @@
     "compile": "tsc --build",
     "lint": "eslint --ignore-path .gitignore --ext ts src test",
     "copy:paste:detector": "jscpd src test",
-    "test:unit": "tape -r source-map-support/register 'target/test/**/*.js' | tap-nirvana",
-    "test:unit:coverage": "nyc tape -r source-map-support/register 'target/test/**/*.js' | tap-nyc"
+    "test:unit": "jest target/test"
   },
   "dependencies": {
     "@actions/core": "1.0.0",
@@ -19,21 +18,15 @@
   },
   "devDependencies": {
     "@types/got": "9.6.7",
-    "@types/sinon": "7.0.13",
-    "@types/tape": "4.2.33",
+    "@types/jest": "24.0.18",
     "@typescript-eslint/eslint-plugin": "2.0.0",
     "@typescript-eslint/parser": "2.0.0",
     "eslint": "6.2.2",
     "eslint-config-prettier": "6.1.0",
     "eslint-plugin-prettier": "3.1.0",
+    "jest": "24.9.0",
     "jscpd": "2.0.15",
-    "nyc": "14.1.1",
     "prettier": "1.18.2",
-    "sinon": "7.4.1",
-    "source-map-support": "0.5.13",
-    "tap-nirvana": "1.1.0",
-    "tap-nyc": "1.0.3",
-    "tape": "4.11.0",
     "typescript": "3.6.2"
   }
 }
