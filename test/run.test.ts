@@ -1,60 +1,77 @@
-import test from 'tape';
-import sinon from 'sinon';
 import * as actionsCore from '@actions/core';
 import { GotInstance } from 'got';
 import { run } from '../src/run';
 
 function createCore() {
-  const getInput = sinon.stub();
-  getInput.withArgs('event', { required: true }).returns('my-event');
-  getInput.withArgs('key', { required: true }).returns('foobar123');
+  const getInput = jest
+    .fn()
+    .mockReturnValueOnce('my-event')
+    .mockReturnValueOnce('foobar123');
   return {
     getInput,
-    setFailed: sinon.fake(),
+    setFailed: jest.fn(),
   };
 }
 
 function createGot() {
   return {
-    post: sinon.fake.resolves({
+    post: jest.fn().mockResolvedValue({
       statusCode: 200,
       body: 'Testbody',
     }),
   };
 }
 
-test('calls correct ifttt.com webhook URL', async t => {
-  t.plan(1);
+test('calls getInput() with "event" name', async () => {
   const core = createCore();
   const got = createGot();
   await run(
     (core as unknown) as typeof actionsCore,
     (got as unknown) as GotInstance,
   );
-  sinon.assert.calledWith(
-    got.post,
-    'https://maker.ifttt.com/trigger/my-event/with/key/foobar123',
-  );
-  t.pass();
+  expect(core.getInput).toHaveBeenCalledWith('event', { required: true });
 });
 
-test('returns statusCode and body', async t => {
-  t.plan(2);
+test('calls getInput() with "key" name', async () => {
+  const core = createCore();
+  const got = createGot();
+  await run(
+    (core as unknown) as typeof actionsCore,
+    (got as unknown) as GotInstance,
+  );
+  expect(core.getInput).toHaveBeenCalledWith('key', { required: true });
+});
+
+test('calls correct ifttt.com webhook URL', async () => {
+  const core = createCore();
+  const got = createGot();
+  await run(
+    (core as unknown) as typeof actionsCore,
+    (got as unknown) as GotInstance,
+  );
+  expect(got.post).toHaveBeenCalledWith(
+    'https://maker.ifttt.com/trigger/my-event/with/key/foobar123',
+  );
+});
+
+test('returns statusCode and body', async () => {
   const core = createCore();
   const got = createGot();
   const { statusCode, body } = await run(
     (core as unknown) as typeof actionsCore,
     (got as unknown) as GotInstance,
   );
-  t.equal(statusCode, 200);
-  t.equal(body, 'Testbody');
+  expect(statusCode).toBe(200);
+  expect(body).toBe('Testbody');
 });
 
-test('calls setFailed() when an error occurred', async t => {
-  t.plan(1);
+test('calls setFailed() when an error occurred', async () => {
+  expect.assertions(1);
   const core = createCore();
   const got = {
-    post: sinon.fake.throws('Test error'),
+    post: jest.fn(() => {
+      throw new Error('Test error');
+    }),
   };
   try {
     await run(
@@ -62,7 +79,6 @@ test('calls setFailed() when an error occurred', async t => {
       (got as unknown) as GotInstance,
     );
   } catch {
-    sinon.assert.calledWith(core.setFailed, 'Test error');
-    t.pass();
+    expect(core.setFailed).toHaveBeenCalledWith('Test error');
   }
 });
