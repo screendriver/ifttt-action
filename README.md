@@ -1,6 +1,6 @@
 # ifttt-action
 
-[![GitHub Actions status](https://github.com/screendriver/ifttt-action/cibulb/workflows/CI/badge.svg)](https://github.com/screendriver/ifttt-action/cibulb/actions)
+[![GitHub Actions status](https://github.com/screendriver/ifttt-action/workflows/CI/badge.svg)](https://github.com/screendriver/ifttt-action/actions)
 
 A GitHub action that triggers an [IFTTT webhooks](https://ifttt.com/maker_webhooks)
 event. This is useful for example when you want to trigger a IFTTT webhook after
