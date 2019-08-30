@@ -21,3 +21,8 @@ jobs:
         run: yarn compile
       - name: Run tests
         run: yarn test:unit --coverage
+      - name: Upload code coverage to Codecov
+        uses: codecov/codecov-action@v1.0.2
+        with:
+          token: ${{secrets.CODECOV_TOKEN}}
+          file: target/coverage/clover.xml
