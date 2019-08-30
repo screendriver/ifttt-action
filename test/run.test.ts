@@ -1,12 +1,15 @@
 import * as actionsCore from '@actions/core';
 import { GotInstance } from 'got';
+import { when } from 'jest-when';
 import { run } from '../src/run';
 
 function createCore() {
-  const getInput = jest
-    .fn()
-    .mockReturnValueOnce('my-event')
-    .mockReturnValueOnce('foobar123');
+  const getInput = jest.fn();
+  when(getInput)
+    .calledWith('event', { required: true })
+    .mockReturnValue('my-event')
+    .calledWith('key', { required: true })
+    .mockReturnValue('foobar123');
   return {
     getInput,
     setFailed: jest.fn(),
@@ -28,19 +31,6 @@ function doRun(core = createCore(), got = createGot()) {
     (got as unknown) as GotInstance,
   );
 }
-
-test('calls getInput() with "event" name', async () => {
-  const core = createCore();
-  await doRun(core);
-  expect(core.getInput).toHaveBeenCalledWith('event', { required: true });
-});
-
-test('calls getInput() with "key" name', async () => {
-  const core = createCore();
-  const got = createGot();
-  await doRun(core, got);
-  expect(core.getInput).toHaveBeenCalledWith('key', { required: true });
-});
 
 test('calls correct ifttt.com webhook URL', async () => {
   const core = createCore();
