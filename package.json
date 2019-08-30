@@ -9,7 +9,7 @@
     "compile": "tsc --build",
     "lint": "eslint --ignore-path .gitignore --ext ts src test",
     "copy:paste:detector": "jscpd src test",
-    "test:unit": "jest target/test"
+    "test:unit": "jest test"
   },
   "dependencies": {
     "@actions/core": "1.0.0",
