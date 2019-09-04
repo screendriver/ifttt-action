@@ -9,7 +9,8 @@
     "compile": "tsc --build",
     "lint": "eslint --ignore-path .gitignore --ext ts src test",
     "copy:paste:detector": "jscpd src test",
-    "test:unit": "ava"
+    "test:unit": "ava",
+    "test:unit:coverage": "nyc ava"
   },
   "dependencies": {
     "@actions/core": "1.0.0",
