@@ -18,7 +18,7 @@
     "tslib": "1.10.0"
   },
   "devDependencies": {
-    "@types/got": "9.6.7",
+    "@types/got": "9.6.9",
     "@types/sinon": "7.0.13",
     "@typescript-eslint/eslint-plugin": "2.2.0",
     "@typescript-eslint/parser": "2.2.0",
