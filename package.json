@@ -9,8 +9,8 @@
     "compile": "tsc --build",
     "lint": "eslint --ignore-path .gitignore --ext ts src test",
     "copy:paste:detector": "jscpd src test",
-    "test:unit": "ava",
-    "test:unit:coverage": "nyc ava"
+    "test:unit": "TS_NODE_PROJECT=tsconfig.base.json mocha",
+    "test:unit:coverage": "TS_NODE_PROJECT=tsconfig.base.json nyc mocha"
   },
   "dependencies": {
     "@actions/core": "1.2.0",
