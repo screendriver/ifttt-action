@@ -31,6 +31,6 @@
     "nyc": "14.1.1",
     "prettier": "1.19.1",
     "sinon": "7.4.2",
-    "typescript": "3.6.3"
+    "typescript": "3.7.2"
   }
 }
