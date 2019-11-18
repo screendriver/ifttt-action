@@ -1,4 +1,4 @@
-import test from 'ava';
+import { expect } from 'chai';
 import sinon from 'sinon';
 import * as actionsCore from '@actions/core';
 import { GotInstance } from 'got';
@@ -30,35 +30,34 @@ function doRun(core = createCore(), got = createGot()) {
   );
 }
 
-test('calls correct ifttt.com webhook URL', async t => {
-  const core = createCore();
-  const got = createGot();
-  await doRun(core, got);
-  sinon.assert.calledWith(
-    got.post,
-    'https://maker.ifttt.com/trigger/my-event/with/key/foobar123',
-  );
-  t.pass();
-});
-
-test('returns statusCode and body', async t => {
-  const core = createCore();
-  const got = createGot();
-  const { statusCode, body } = await doRun(core, got);
-  t.is(statusCode, 200);
-  t.is(body, 'Testbody');
-});
-
-test('calls setFailed() when an error occurred', async t => {
-  t.plan(1);
-  const core = createCore();
-  const got = {
-    post: sinon.fake.throws(new Error('Test error')),
-  };
-  try {
+suite('run', () => {
+  test('calls correct ifttt.com webhook URL', async () => {
+    const core = createCore();
+    const got = createGot();
     await doRun(core, got);
-  } catch {
-    sinon.assert.calledWith(core.setFailed, 'Test error');
-    t.pass();
-  }
+    expect(got.post).to.have.been.calledWith(
+      'https://maker.ifttt.com/trigger/my-event/with/key/foobar123',
+    );
+  });
+
+  test('returns statusCode and body', async () => {
+    const core = createCore();
+    const got = createGot();
+    const { statusCode, body } = await doRun(core, got);
+    expect(statusCode).to.equal(200);
+    expect(body).to.equal('Testbody');
+  });
+
+  test('calls setFailed() when an error occurred', async () => {
+    const core = createCore();
+    const got = {
+      post: sinon.fake.throws(new Error('Test error')),
+    };
+    try {
+      await doRun(core, got);
+      expect.fail();
+    } catch {
+      expect(core.setFailed).to.have.been.calledWith('Test error');
+    }
+  });
 });
