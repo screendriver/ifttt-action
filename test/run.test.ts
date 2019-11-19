@@ -30,8 +30,8 @@ function doRun(core = createCore(), got = createGot()) {
   );
 }
 
-suite('run', () => {
-  test('calls correct ifttt.com webhook URL', async () => {
+suite('run', function() {
+  test('calls correct ifttt.com webhook URL', async function() {
     const core = createCore();
     const got = createGot();
     await doRun(core, got);
@@ -40,7 +40,7 @@ suite('run', () => {
     );
   });
 
-  test('returns statusCode and body', async () => {
+  test('returns statusCode and body', async function() {
     const core = createCore();
     const got = createGot();
     const { statusCode, body } = await doRun(core, got);
@@ -48,7 +48,7 @@ suite('run', () => {
     expect(body).to.equal('Testbody');
   });
 
-  test('calls setFailed() when an error occurred', async () => {
+  test('calls setFailed() when an error occurred', async function() {
     const core = createCore();
     const got = {
       post: sinon.fake.throws(new Error('Test error')),
