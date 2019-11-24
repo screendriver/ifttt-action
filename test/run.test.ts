@@ -1,4 +1,4 @@
-import { expect } from 'chai';
+import { assert } from 'chai';
 import sinon from 'sinon';
 import * as actionsCore from '@actions/core';
 import { GotInstance } from 'got';
@@ -35,7 +35,8 @@ suite('run', function() {
     const core = createCore();
     const got = createGot();
     await doRun(core, got);
-    expect(got.post).to.have.been.calledWith(
+    sinon.assert.calledWith(
+      got.post,
       'https://maker.ifttt.com/trigger/my-event/with/key/foobar123',
     );
   });
@@ -44,8 +45,8 @@ suite('run', function() {
     const core = createCore();
     const got = createGot();
     const { statusCode, body } = await doRun(core, got);
-    expect(statusCode).to.equal(200);
-    expect(body).to.equal('Testbody');
+    assert.equal(statusCode, 200);
+    assert.equal(body, 'Testbody');
   });
 
   test('calls setFailed() when an error occurred', async function() {
@@ -55,9 +56,9 @@ suite('run', function() {
     };
     try {
       await doRun(core, got);
-      expect.fail();
+      assert.fail();
     } catch {
-      expect(core.setFailed).to.have.been.calledWith('Test error');
+      sinon.assert.calledWith(core.setFailed, 'Test error');
     }
   });
 });
