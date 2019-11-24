@@ -3,7 +3,6 @@
     "target": "es2018",
     "module": "commonjs",
     "moduleResolution": "node",
-    "noEmitOnError": true,
     "importHelpers": true,
     "sourceMap": true,
     "declaration": true,
