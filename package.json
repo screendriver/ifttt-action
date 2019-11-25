@@ -27,7 +27,7 @@
     "chai": "4.2.0",
     "eslint": "6.6.0",
     "eslint-config-prettier": "6.6.0",
-    "eslint-plugin-mocha": "6.2.1",
+    "eslint-plugin-mocha": "6.2.2",
     "eslint-plugin-prettier": "3.1.1",
     "jscpd": "2.0.16",
     "mocha": "6.2.2",
