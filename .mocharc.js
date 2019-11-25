@@ -1,6 +1,6 @@
 module.exports = {
   spec: 'test/**/*.test.*',
-  require: ['ts-node/register/transpile-only', './test/setup.ts'],
+  require: ['ts-node/register/transpile-only'],
   extension: 'ts',
   ui: 'tdd',
 };
