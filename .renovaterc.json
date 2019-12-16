@@ -9,5 +9,13 @@
   },
   "nvm": {
     "enabled": false
-  }
+  },
+  "packageRules": [
+    {
+      "depTypeList": ["dependencies", "devDependencies"],
+      "updateTypes": ["minor", "patch"],
+      "automerge": true,
+      "automergeType": "branch"
+    }
+  ]
 }
