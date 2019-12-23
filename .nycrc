@@ -5,7 +5,6 @@
   "cache-dir": "target/.cache",
   "exclude-after-remap": false,
   "require": ["ts-node/register/transpile-only"],
-  "extension": [".ts"],
   "include": [
     "src/**/*"
   ],
