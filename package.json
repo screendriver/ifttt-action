@@ -13,7 +13,7 @@
     "test:unit:coverage": "TS_NODE_PROJECT=tsconfig.base.json nyc mocha"
   },
   "dependencies": {
-    "@actions/core": "1.2.0",
+    "@actions/core": "1.2.1",
     "got": "9.6.0",
     "tslib": "1.10.0"
   },
