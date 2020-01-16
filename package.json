@@ -35,6 +35,6 @@
     "prettier": "1.19.1",
     "sinon": "8.1.0",
     "ts-node": "8.6.2",
-    "typescript": "3.7.4"
+    "typescript": "3.7.5"
   }
 }
