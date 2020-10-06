@@ -15,7 +15,7 @@
   "dependencies": {
     "@actions/core": "1.2.6",
     "got": "9.6.0",
-    "tslib": "2.0.1"
+    "tslib": "2.0.2"
   },
   "devDependencies": {
     "@types/chai": "4.2.13",
