@@ -1,6 +1,5 @@
 {
   "extends": ["config:base"],
-  "commitMessagePrefix": "⬆️ ",
   "labels": ["renovate"],
   "rebaseStalePrs": false,
   "lockFileMaintenance": {
