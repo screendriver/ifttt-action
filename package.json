@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "compile": "tsc --build",
-    "lint": "eslint --ext ts src test",
+    "lint": "eslint src test --ext '.ts,.tsx'",
     "copy:paste:detector": "jscpd src test",
     "test:unit": "TS_NODE_PROJECT=tsconfig.base.json mocha",
     "test:unit:coverage": "TS_NODE_PROJECT=tsconfig.base.json nyc mocha"
