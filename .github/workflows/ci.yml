@@ -33,4 +33,4 @@ jobs:
         uses: codecov/codecov-action@v1
         with:
           token: ${{secrets.CODECOV_TOKEN}}
-          file: target/coverage/clover.xml
+          file: target/coverage/coverage-final.json
