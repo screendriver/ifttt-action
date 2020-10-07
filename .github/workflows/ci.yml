@@ -3,6 +3,20 @@ name: CI
 on: [push, pull_request]
 
 jobs:
+  code-coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js v14
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+      - run: npm ci
+      - run: npm run test:unit:coverage
+      - name: Upload code coverage to Codecov
+        uses: codecov/codecov-action@v1
+        with:
+          file: target/coverage/coverage-final.json
   build:
     runs-on: ubuntu-latest
     steps:
@@ -28,9 +42,4 @@ jobs:
       - name: Compile source code
         run: npm run compile
       - name: Run tests
-        run: npm run test:unit:coverage
-      - name: Upload code coverage to Codecov
-        uses: codecov/codecov-action@v1
-        with:
-          token: ${{secrets.CODECOV_TOKEN}}
-          file: target/coverage/coverage-final.json
+        run: npm run test:unit
