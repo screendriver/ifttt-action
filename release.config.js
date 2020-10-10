@@ -7,6 +7,13 @@ module.exports = {
     '@semantic-release/release-notes-generator',
     '@semantic-release/changelog',
     [
+      '@semantic-release/npm',
+      {
+        npmPublish: false,
+        tarballDir: false,
+      },
+    ],
+    [
       '@semantic-release/git',
       {
         assets: [
