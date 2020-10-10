@@ -1,4 +1,4 @@
-import test from 'tape';
+import { assert } from 'chai';
 import sinon from 'sinon';
 import * as actionsCore from '@actions/core';
 import { GotInstance } from 'got';
@@ -23,46 +23,42 @@ function createGot() {
   };
 }
 
-test('calls correct ifttt.com webhook URL', async t => {
-  t.plan(1);
-  const core = createCore();
-  const got = createGot();
-  await run(
+function doRun(core = createCore(), got = createGot()) {
+  return run(
     (core as unknown) as typeof actionsCore,
     (got as unknown) as GotInstance,
   );
-  sinon.assert.calledWith(
-    got.post,
-    'https://maker.ifttt.com/trigger/my-event/with/key/foobar123',
-  );
-  t.pass();
-});
+}
 
-test('returns statusCode and body', async t => {
-  t.plan(2);
-  const core = createCore();
-  const got = createGot();
-  const { statusCode, body } = await run(
-    (core as unknown) as typeof actionsCore,
-    (got as unknown) as GotInstance,
-  );
-  t.equal(statusCode, 200);
-  t.equal(body, 'Testbody');
-});
-
-test('calls setFailed() when an error occurred', async t => {
-  t.plan(1);
-  const core = createCore();
-  const got = {
-    post: sinon.fake.throws('Test error'),
-  };
-  try {
-    await run(
-      (core as unknown) as typeof actionsCore,
-      (got as unknown) as GotInstance,
+suite('run', function () {
+  test('calls correct ifttt.com webhook URL', async function () {
+    const core = createCore();
+    const got = createGot();
+    await doRun(core, got);
+    sinon.assert.calledWith(
+      got.post,
+      'https://maker.ifttt.com/trigger/my-event/with/key/foobar123',
     );
-  } catch {
-    sinon.assert.calledWith(core.setFailed, 'Test error');
-    t.pass();
-  }
+  });
+
+  test('returns statusCode and body', async function () {
+    const core = createCore();
+    const got = createGot();
+    const { statusCode, body } = await doRun(core, got);
+    assert.equal(statusCode, 200);
+    assert.equal(body, 'Testbody');
+  });
+
+  test('calls setFailed() when an error occurred', async function () {
+    const core = createCore();
+    const got = {
+      post: sinon.fake.throws(new Error('Test error')),
+    };
+    try {
+      await doRun(core, got);
+      assert.fail();
+    } catch {
+      sinon.assert.calledWith(core.setFailed, 'Test error');
+    }
+  });
 });
