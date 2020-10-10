@@ -40,3 +40,8 @@ jobs:
           npm run copy:paste:detector
       - name: Compile source code
         run: npm run compile
+      - name: Upload compiled source code as artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: compiled-source
+          path: target/src/
