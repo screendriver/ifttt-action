@@ -10,7 +10,7 @@ inputs:
     required: true
 runs:
   using: node12
-  main: target/src/index.js
+  main: target/dist/index.js
 branding:
   icon: zap
   color: blue
