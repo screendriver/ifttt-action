@@ -42,10 +42,10 @@ jobs:
         run: npm run compile
       - name: Build application
         run: npm run build
-      - name: Upload compiled source code as artifact
+      - name: Upload built application as artifact
         uses: actions/upload-artifact@v2
         with:
-          name: compiled-source
+          name: application
           path: target/dist/
   release:
     if: github.ref != 'refs/heads/releases/v1'
@@ -59,10 +59,10 @@ jobs:
           node-version: 12.x
       - name: Install dependencies
         run: npm ci
-      - name: Download compiled source code artifact
+      - name: Download built application artifact
         uses: actions/download-artifact@v2
         with:
-          name: compiled-source
+          name: application
           path: target/dist/
       - name: Semantic release
         run: npx semantic-release --dry-run
