@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-  branches: ['main'],
+  branches: ['releases/v1'],
   plugins: [
     '@semantic-release/commit-analyzer',
     '@semantic-release/release-notes-generator',
