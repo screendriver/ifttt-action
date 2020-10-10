@@ -48,5 +48,3 @@ jobs:
           npm run copy:paste:detector
       - name: Compile source code
         run: npm run compile
-      - name: Run tests
-        run: npm run test:unit
