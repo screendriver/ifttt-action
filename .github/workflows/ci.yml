@@ -48,7 +48,7 @@ jobs:
           name: application
           path: target/dist/
   release:
-    if: github.ref != 'refs/heads/releases/v1'
+    if: github.ref == 'refs/heads/releases/v1'
     needs: [commitlint, code-coverage, build]
     runs-on: ubuntu-latest
     steps:
