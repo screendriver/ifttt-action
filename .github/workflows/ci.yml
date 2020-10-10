@@ -45,3 +45,24 @@ jobs:
         with:
           name: compiled-source
           path: target/src/
+  release:
+    if: github.ref != 'refs/heads/releases/v1'
+    needs: [commitlint, code-coverage, build]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: Install dependencies
+        run: npm ci
+      - name: Download compiled source code artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: compiled-source
+          path: target/dist/
+      - name: Semantic release
+        run: npx semantic-release --dry-run
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
