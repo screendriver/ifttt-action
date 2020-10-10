@@ -7,6 +7,7 @@
   "license": "MIT",
   "scripts": {
     "compile": "tsc --build",
+    "build": "ncc build target/src/index.js --out target/dist/ --minify",
     "lint": "eslint src test --ext '.ts,.tsx'",
     "copy:paste:detector": "jscpd src test",
     "test:unit": "TS_NODE_PROJECT=tsconfig.base.json mocha",
@@ -29,6 +30,7 @@
     "@types/sinon": "9.0.8",
     "@typescript-eslint/eslint-plugin": "4.4.0",
     "@typescript-eslint/parser": "4.4.0",
+    "@vercel/ncc": "0.24.1",
     "c8": "7.3.3",
     "chai": "4.2.0",
     "eslint": "7.11.0",

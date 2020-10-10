@@ -40,8 +40,31 @@ jobs:
           npm run copy:paste:detector
       - name: Compile source code
         run: npm run compile
-      - name: Upload compiled source code as artifact
+      - name: Build application
+        run: npm run build
+      - name: Upload built application as artifact
         uses: actions/upload-artifact@v2
         with:
-          name: compiled-source
-          path: target/src/
+          name: application
+          path: target/dist/
+  release:
+    if: github.ref == 'refs/heads/releases/v1'
+    needs: [commitlint, code-coverage, build]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: Install dependencies
+        run: npm ci
+      - name: Download built application artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: application
+          path: target/dist/
+      - name: Semantic release
+        run: npx semantic-release --dry-run
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
