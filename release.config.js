@@ -6,7 +6,17 @@ module.exports = {
     '@semantic-release/commit-analyzer',
     '@semantic-release/release-notes-generator',
     '@semantic-release/changelog',
-    '@semantic-release/git',
+    [
+      '@semantic-release/git',
+      {
+        assets: [
+          'target/dist/**/*.js',
+          'CHANGELOG.md',
+          'package.json',
+          'package-lock.json',
+        ],
+      },
+    ],
     '@semantic-release/github',
   ],
 };
