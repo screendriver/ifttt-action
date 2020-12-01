@@ -38,7 +38,7 @@
     "eslint-config-prettier": "6.15.0",
     "eslint-plugin-mocha": "8.0.0",
     "eslint-plugin-prettier": "3.1.4",
-    "jscpd": "3.3.21",
+    "jscpd": "3.3.22",
     "mocha": "8.2.1",
     "prettier": "2.2.1",
     "semantic-release": "17.3.0",
