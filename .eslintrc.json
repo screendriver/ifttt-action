@@ -7,11 +7,11 @@
   },
   "extends": [
     "eslint:recommended",
+    "prettier",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:prettier/recommended",
-    "prettier/@typescript-eslint",
     "plugin:mocha/recommended"
   ],
   "plugins": ["@typescript-eslint", "mocha"],
