@@ -34,7 +34,7 @@
     "@vercel/ncc": "0.28.2",
     "c8": "7.7.1",
     "chai": "4.3.4",
-    "eslint": "7.23.0",
+    "eslint": "7.24.0",
     "eslint-config-prettier": "8.1.0",
     "eslint-plugin-mocha": "8.1.0",
     "eslint-plugin-prettier": "3.3.1",
