@@ -25,8 +25,8 @@ function createGot() {
 
 function doRun(core = createCore(), got = createGot()) {
   return run(
-    (core as unknown) as typeof actionsCore,
-    (got as unknown) as GotInstance,
+    core as unknown as typeof actionsCore,
+    got as unknown as GotInstance,
   );
 }
 
