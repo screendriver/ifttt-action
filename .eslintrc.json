@@ -7,11 +7,11 @@
   },
   "extends": [
     "eslint:recommended",
+    "prettier",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:prettier/recommended",
-    "prettier/@typescript-eslint",
     "plugin:mocha/recommended"
   ],
   "plugins": ["@typescript-eslint", "mocha"],
@@ -20,6 +20,8 @@
   },
   "rules": {
     "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/no-implicit-any-catch": 2
+    "@typescript-eslint/no-implicit-any-catch": 2,
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off"
   }
 }

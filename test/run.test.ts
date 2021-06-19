@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 import sinon from 'sinon';
 import * as actionsCore from '@actions/core';
-import { GotInstance } from 'got';
+import { Got } from 'got';
 import { run } from '../src/run';
 
 function createCore() {
@@ -24,10 +24,7 @@ function createGot() {
 }
 
 function doRun(core = createCore(), got = createGot()) {
-  return run(
-    (core as unknown) as typeof actionsCore,
-    (got as unknown) as GotInstance,
-  );
+  return run(core as unknown as typeof actionsCore, got as unknown as Got);
 }
 
 suite('run', function () {
