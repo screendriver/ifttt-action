@@ -1,5 +1,5 @@
 import * as actionsCore from '@actions/core';
-import { GotInstance } from 'got';
+import { Got } from 'got';
 
 function hasMessage(arg: unknown): arg is { message: string } {
   return typeof arg === 'object' && arg !== null && 'message' in arg;
@@ -12,7 +12,7 @@ interface Response {
 
 export async function run(
   core: typeof actionsCore,
-  got: GotInstance,
+  got: Got,
 ): Promise<Response> {
   try {
     const event = core.getInput('event', { required: true });
