@@ -14,10 +14,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js v14
+      - name: Use Node.js v16
         uses: actions/setup-node@v2
         with:
-          node-version: 14
+          node-version: 16
       - name: Install dependencies
         run: npm ci
       - name: Run unit tests
@@ -30,12 +30,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js 12.x
+      - name: Use Node.js v16
         uses: actions/setup-node@v2
         with:
-          node-version: '12.x'
-      - name: npm 7
-        run: npm install --global npm@7 --registry=https://registry.npmjs.org
+          node-version: '16.x'
       - name: Install dependencies
         run: npm ci
       - name: Check source code
@@ -57,12 +55,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js 12.x
+      - name: Use Node.js v16
         uses: actions/setup-node@v2
         with:
-          node-version: 12.x
-      - name: npm 7
-        run: npm install --global npm@7 --registry=https://registry.npmjs.org
+          node-version: 16.x
       - name: Install dependencies
         run: npm ci
       - name: Download built application artifact
