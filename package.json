@@ -27,7 +27,7 @@
     "@semantic-release/release-notes-generator": "9.0.3",
     "@types/chai": "4.2.20",
     "@types/got": "9.6.12",
-    "@types/mocha": "8.2.2",
+    "@types/mocha": "8.2.3",
     "@types/sinon": "10.0.2",
     "@typescript-eslint/eslint-plugin": "4.28.2",
     "@typescript-eslint/parser": "4.28.2",
