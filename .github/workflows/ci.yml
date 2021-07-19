@@ -23,7 +23,7 @@ jobs:
       - name: Run unit tests
         run: npm run test:unit:coverage
       - name: Upload code coverage to Codecov
-        uses: codecov/codecov-action@v1
+        uses: codecov/codecov-action@v2
         with:
           file: target/coverage/coverage-final.json
   build:
