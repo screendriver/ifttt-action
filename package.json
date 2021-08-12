@@ -16,7 +16,7 @@
   "dependencies": {
     "@actions/core": "1.4.0",
     "got": "11.8.2",
-    "tslib": "2.3.0"
+    "tslib": "2.3.1"
   },
   "devDependencies": {
     "@semantic-release/changelog": "5.0.1",
