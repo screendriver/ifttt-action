@@ -28,7 +28,7 @@
     "@types/chai": "4.2.21",
     "@types/got": "9.6.12",
     "@types/mocha": "9.0.0",
-    "@types/sinon": "10.0.2",
+    "@types/sinon": "10.0.3",
     "@typescript-eslint/eslint-plugin": "4.31.2",
     "@typescript-eslint/parser": "4.31.2",
     "@vercel/ncc": "0.31.1",
