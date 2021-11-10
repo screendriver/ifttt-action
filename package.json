@@ -11,7 +11,7 @@
         "lint": "eslint src test --ext '.ts,.tsx'",
         "copy:paste:detector": "jscpd src test",
         "test:unit": "ava",
-        "test:unit:coverage": "c8 av"
+        "test:unit:coverage": "c8 ava"
     },
     "dependencies": {
         "@actions/core": "1.6.0",
