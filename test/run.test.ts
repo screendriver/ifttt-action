@@ -32,10 +32,7 @@ test('calls correct ifttt.com webhook URL', async function (t) {
   const got = createGot();
   await doRun(core, got);
 
-  sinon.assert.calledWith(
-    got.post,
-    'https://maker.ifttt.com/trigger/my-event/with/key/foobar123',
-  );
+  sinon.assert.calledWith(got.post, 'https://maker.ifttt.com/trigger/my-event/with/key/foobar123');
   t.pass();
 });
 
