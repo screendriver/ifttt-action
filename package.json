@@ -10,8 +10,8 @@
     "build": "ncc build target/src/index.js --out target/dist/ --minify",
     "lint": "eslint src test --ext '.ts,.tsx'",
     "copy:paste:detector": "jscpd src test",
-    "test:unit": "TS_NODE_PROJECT=tsconfig.base.json mocha",
-    "test:unit:coverage": "TS_NODE_PROJECT=tsconfig.base.json c8 mocha"
+    "test:unit": "ava",
+    "test:unit:coverage": "c8 av"
   },
   "dependencies": {
     "@actions/core": "1.6.0",
