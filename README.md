@@ -14,8 +14,8 @@ See [action.yml](https://github.com/screendriver/ifttt-action/blob/main/action.y
 
 ```yaml
 steps:
-  - uses: screendriver/ifttt-action@v1
-    with:
-      event: your-webhook-event
-      key: your-webhook-secret-key
+    - uses: screendriver/ifttt-action@v1
+      with:
+          event: your-webhook-event
+          key: your-webhook-secret-key
 ```

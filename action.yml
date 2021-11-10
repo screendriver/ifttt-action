@@ -2,15 +2,15 @@ name: GitHub Action for IFTTT
 author: Christian Rackerseder
 description: Triggers an IFTTT webhooks event
 inputs:
-  event:
-    description: The name of the event
-    required: true
-  key:
-    description: Your secret IFTTT webhooks key
-    required: true
+    event:
+        description: The name of the event
+        required: true
+    key:
+        description: Your secret IFTTT webhooks key
+        required: true
 runs:
-  using: node12
-  main: target/dist/index.js
+    using: node12
+    main: target/dist/index.js
 branding:
-  icon: zap
-  color: blue
+    icon: zap
+    color: blue
