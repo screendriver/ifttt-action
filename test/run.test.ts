@@ -27,7 +27,7 @@ function doRun(core = createCore(), got = createGot()) {
     return run(core as unknown as typeof actionsCore, got as unknown as Got);
 }
 
-test('calls correct ifttt.com webhook URL', async function (t) {
+test('calls correct ifttt.com webhook URL', async (t) => {
     const core = createCore();
     const got = createGot();
     await doRun(core, got);
@@ -36,7 +36,7 @@ test('calls correct ifttt.com webhook URL', async function (t) {
     t.pass();
 });
 
-test('returns statusCode and body', async function (t) {
+test('returns statusCode and body', async (t) => {
     const core = createCore();
     const got = createGot();
     const { statusCode, body } = await doRun(core, got);
@@ -45,7 +45,7 @@ test('returns statusCode and body', async function (t) {
     t.is(body, 'Testbody');
 });
 
-test('calls setFailed() when an error occurred', async function (t) {
+test('calls setFailed() when an error occurred', async (t) => {
     t.plan(1);
     const core = createCore();
     const got = {
