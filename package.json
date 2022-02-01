@@ -39,7 +39,7 @@
         "jscpd": "3.4.5",
         "prettier": "2.5.1",
         "semantic-release": "19.0.2",
-        "sinon": "13.0.0",
+        "sinon": "13.0.1",
         "ts-node": "10.4.0",
         "typescript": "4.5.5"
     }
