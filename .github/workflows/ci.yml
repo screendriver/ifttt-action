@@ -45,7 +45,7 @@ jobs:
       - name: Build application
         run: npm run build
       - name: Upload built application as artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: application
           path: target/dist/
