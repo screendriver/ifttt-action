@@ -37,7 +37,7 @@
         "eslint-plugin-ava": "13.2.0",
         "eslint-plugin-prettier": "4.0.0",
         "jscpd": "3.4.5",
-        "prettier": "2.7.0",
+        "prettier": "2.7.1",
         "semantic-release": "19.0.3",
         "sinon": "14.0.0",
         "ts-node": "10.8.1",
