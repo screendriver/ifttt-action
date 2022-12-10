@@ -8,7 +8,7 @@
     "extension": [".ts"],
     "include": ["src/**/*"],
     "exclude": ["src/index.ts"],
-    "reporter": ["lcov", "text-summary", "json"],
+    "reporter": ["lcov", "text-summary", "clover"],
     "reportDir": "./target/coverage",
     "tempDirectory": "./target/c8_output"
 }
