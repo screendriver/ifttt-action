@@ -10,8 +10,8 @@
         "build": "ncc build target/src/index.js --out target/dist/ --minify",
         "lint": "eslint src test --ext '.ts,.tsx'",
         "copy:paste:detector": "jscpd src test",
-        "test:unit": "ava",
-        "test:unit:coverage": "c8 ava"
+        "test:unit": "NODE_OPTIONS='--loader tsx --no-warnings' uvu 'test' '.*\\.test\\.ts$'",
+        "test:unit:coverage": "c8 npm run test:unit"
     },
     "dependencies": {
         "@actions/core": "1.10.0",
