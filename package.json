@@ -38,7 +38,7 @@
         "jscpd": "3.5.4",
         "prettier": "2.8.7",
         "semantic-release": "21.0.1",
-        "sinon": "15.0.3",
+        "sinon": "15.0.4",
         "tsx": "3.12.6",
         "typescript": "5.0.4",
         "uvu": "0.5.6"
