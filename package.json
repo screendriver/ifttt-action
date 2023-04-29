@@ -37,7 +37,7 @@
         "eslint-plugin-prettier": "4.2.1",
         "jscpd": "3.5.5",
         "prettier": "2.8.8",
-        "semantic-release": "21.0.1",
+        "semantic-release": "21.0.2",
         "sinon": "15.0.4",
         "tsx": "3.12.6",
         "typescript": "5.0.4",
