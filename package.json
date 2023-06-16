@@ -31,7 +31,7 @@
         "@typescript-eslint/parser": "5.59.9",
         "@vercel/ncc": "0.36.1",
         "c8": "7.14.0",
-        "esbuild": "0.18.3",
+        "esbuild": "0.18.4",
         "eslint": "8.42.0",
         "eslint-config-prettier": "8.8.0",
         "eslint-plugin-prettier": "4.2.1",
