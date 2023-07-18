@@ -3,13 +3,6 @@ name: CI
 on: [push, pull_request]
 
 jobs:
-    commitlint:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v3
-              with:
-                  fetch-depth: 0
-            - uses: wagoid/commitlint-github-action@v5
     code-coverage:
         runs-on: ubuntu-latest
         steps:
@@ -49,24 +42,3 @@ jobs:
               with:
                   name: application
                   path: target/dist/
-    release:
-        if: github.ref == 'refs/heads/releases/v1'
-        needs: [commitlint, code-coverage, build]
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v3
-            - name: Use Node.js v16
-              uses: actions/setup-node@v3
-              with:
-                  node-version: 16.x
-            - name: Install dependencies
-              run: npm ci
-            - name: Download built application artifact
-              uses: actions/download-artifact@v3
-              with:
-                  name: application
-                  path: target/dist/
-            - name: Semantic release
-              run: npx semantic-release
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
