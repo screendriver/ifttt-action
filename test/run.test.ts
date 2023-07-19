@@ -1,5 +1,4 @@
-import { test } from 'uvu';
-import * as assert from 'uvu/assert';
+import test from 'ava';
 import sinon from 'sinon';
 import * as actionsCore from '@actions/core';
 import { Got } from 'got';
@@ -28,34 +27,34 @@ function doRun(core = createCore(), got = createGot()) {
     return run(core as unknown as typeof actionsCore, got as unknown as Got);
 }
 
-test('calls correct ifttt.com webhook URL', async () => {
+test('calls correct ifttt.com webhook URL', async (t) => {
     const core = createCore();
     const got = createGot();
     await doRun(core, got);
 
     sinon.assert.calledWith(got.post, 'https://maker.ifttt.com/trigger/my-event/with/key/foobar123');
+    t.pass();
 });
 
-test('returns statusCode and body', async () => {
+test('returns statusCode and body', async (t) => {
     const core = createCore();
     const got = createGot();
     const { statusCode, body } = await doRun(core, got);
 
-    assert.equal(statusCode, 200);
-    assert.equal(body, 'Testbody');
+    t.is(statusCode, 200);
+    t.is(body, 'Testbody');
 });
 
-test('calls setFailed() when an error occurred', async () => {
+test('calls setFailed() when an error occurred', async (t) => {
     const core = createCore();
     const got = {
         post: sinon.fake.throws(new Error('Test error')),
     };
     try {
         await doRun(core, got);
-        assert.unreachable();
+        t.fail();
     } catch {
         sinon.assert.calledWith(core.setFailed, 'Test error');
+        t.pass();
     }
 });
-
-test.run();
