@@ -11,9 +11,10 @@
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
-        "plugin:prettier/recommended"
+        "plugin:prettier/recommended",
+        "plugin:ava/recommended"
     ],
-    "plugins": ["@typescript-eslint"],
+    "plugins": ["@typescript-eslint", "ava"],
     "env": {
         "node": true
     },

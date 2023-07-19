@@ -10,7 +10,7 @@
         "build": "ncc build target/src/index.js --out target/dist/ --minify",
         "lint": "eslint src test --ext '.ts,.tsx'",
         "copy:paste:detector": "jscpd src test",
-        "test:unit": "NODE_OPTIONS='--loader tsx --no-warnings' uvu 'test' '.*\\.test\\.ts$'",
+        "test:unit": "ava",
         "test:unit:coverage": "c8 npm run test:unit"
     },
     "dependencies": {
@@ -19,21 +19,23 @@
         "tslib": "2.6.0"
     },
     "devDependencies": {
+        "@ava/typescript": "4.1.0",
         "@types/got": "9.6.12",
         "@types/sinon": "10.0.15",
         "@typescript-eslint/eslint-plugin": "5.62.0",
         "@typescript-eslint/parser": "5.62.0",
         "@vercel/ncc": "0.36.1",
+        "ava": "5.3.1",
         "c8": "7.14.0",
         "esbuild": "0.18.14",
         "eslint": "8.45.0",
         "eslint-config-prettier": "8.8.0",
+        "eslint-plugin-ava": "14.0.0",
         "eslint-plugin-prettier": "4.2.1",
         "jscpd": "3.5.9",
         "prettier": "2.8.8",
         "sinon": "15.2.0",
         "tsx": "3.12.7",
-        "typescript": "5.1.6",
-        "uvu": "0.5.6"
+        "typescript": "5.1.6"
     }
 }
