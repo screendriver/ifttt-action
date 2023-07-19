@@ -1,41 +1,41 @@
 {
-    "name": "ifttt-action",
-    "version": "1.0.0",
-    "description": "GitHub action that triggers an IFTTT webhooks event",
-    "main": "target/src/index.js",
-    "author": "Christian Rackerseder <git@echooff.de>",
-    "license": "MIT",
-    "scripts": {
-        "compile": "tsc --build",
-        "build": "ncc build target/src/index.js --out target/dist/ --minify",
-        "lint": "eslint src test --ext '.ts,.tsx'",
-        "copy:paste:detector": "jscpd src test",
-        "test:unit": "ava",
-        "test:unit:coverage": "c8 npm run test:unit"
-    },
-    "dependencies": {
-        "@actions/core": "1.10.0",
-        "got": "11.8.6",
-        "tslib": "2.6.0"
-    },
-    "devDependencies": {
-        "@ava/typescript": "4.1.0",
-        "@types/got": "9.6.12",
-        "@types/sinon": "10.0.15",
-        "@typescript-eslint/eslint-plugin": "5.62.0",
-        "@typescript-eslint/parser": "5.62.0",
-        "@vercel/ncc": "0.36.1",
-        "ava": "5.3.1",
-        "c8": "8.0.0",
-        "esbuild": "0.18.14",
-        "eslint": "8.45.0",
-        "eslint-config-prettier": "8.8.0",
-        "eslint-plugin-ava": "14.0.0",
-        "eslint-plugin-prettier": "4.2.1",
-        "jscpd": "3.5.9",
-        "prettier": "2.8.8",
-        "sinon": "15.2.0",
-        "tsx": "3.12.7",
-        "typescript": "5.1.6"
-    }
+	"name": "ifttt-action",
+	"version": "1.0.0",
+	"description": "GitHub action that triggers an IFTTT webhooks event",
+	"main": "target/src/index.js",
+	"author": "Christian Rackerseder <git@echooff.de>",
+	"license": "MIT",
+	"scripts": {
+		"compile": "tsc --build",
+		"build": "ncc build target/src/index.js --out target/dist/ --minify",
+		"lint": "eslint src test --ext '.ts,.tsx'",
+		"copy:paste:detector": "jscpd src test",
+		"test:unit": "ava",
+		"test:unit:coverage": "c8 npm run test:unit"
+	},
+	"dependencies": {
+		"@actions/core": "1.10.0",
+		"got": "11.8.6",
+		"tslib": "2.6.0"
+	},
+	"devDependencies": {
+		"@ava/typescript": "4.1.0",
+		"@types/got": "9.6.12",
+		"@types/sinon": "10.0.15",
+		"@typescript-eslint/eslint-plugin": "5.62.0",
+		"@typescript-eslint/parser": "5.62.0",
+		"@vercel/ncc": "0.36.1",
+		"ava": "5.3.1",
+		"c8": "8.0.0",
+		"esbuild": "0.18.14",
+		"eslint": "8.45.0",
+		"eslint-config-prettier": "8.8.0",
+		"eslint-plugin-ava": "14.0.0",
+		"eslint-plugin-prettier": "5.0.0",
+		"jscpd": "3.5.9",
+		"prettier": "3.0.0",
+		"sinon": "15.2.0",
+		"tsx": "3.12.7",
+		"typescript": "5.1.6"
+	}
 }
