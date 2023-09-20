@@ -17,10 +17,6 @@ jobs:
               run: npm run compile
             - name: Run unit tests
               run: npm run test:unit:coverage
-            - name: Upload code coverage to Codecov
-              uses: codecov/codecov-action@v4
-              with:
-                  file: target/coverage/clover.xml
             - name: Lint source code
               run: npm run lint
             - name: Check for copy and paste
