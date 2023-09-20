@@ -1,15 +1,15 @@
 {
-    "all": true,
-    "lines": 100,
-    "functions": 100,
-    "statements": 100,
-    "branches": 100,
-    "instrument": true,
-    "extension": ["js"],
-    "src": "target/src",
-    "include": ["target/src/**/*"],
-    "exclude": ["target/src/index.js"],
-    "reporter": ["lcov", "text-summary", "clover"],
-    "reportDir": "./target/coverage",
-    "tempDirectory": "./target/c8_output"
+	"all": true,
+	"lines": 100,
+	"functions": 100,
+	"statements": 100,
+	"branches": 100,
+	"instrument": true,
+	"extension": [".js"],
+	"src": "target/src",
+	"include": ["target/src/**/*"],
+	"exclude": ["target/src/index.js"],
+	"reporter": ["lcov", "text-summary", "clover"],
+	"reportDir": "./target/coverage",
+	"tempDirectory": "./target/c8_output"
 }
