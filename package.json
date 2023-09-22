@@ -32,7 +32,7 @@
 		"eslint-config-prettier": "9.0.0",
 		"eslint-plugin-ava": "14.0.0",
 		"eslint-plugin-prettier": "5.0.0",
-		"jscpd": "3.5.9",
+		"jscpd": "3.5.10",
 		"prettier": "3.0.3",
 		"sinon": "16.0.0",
 		"tsx": "3.12.10",
