@@ -21,7 +21,7 @@
 	"devDependencies": {
 		"@ava/typescript": "4.1.0",
 		"@types/got": "9.6.12",
-		"@types/sinon": "17.0.1",
+		"@types/sinon": "17.0.2",
 		"@typescript-eslint/eslint-plugin": "6.11.0",
 		"@typescript-eslint/parser": "6.11.0",
 		"@vercel/ncc": "0.38.1",
