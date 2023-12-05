@@ -33,7 +33,7 @@
 		"eslint-plugin-ava": "14.0.0",
 		"eslint-plugin-prettier": "5.0.1",
 		"jscpd": "3.5.10",
-		"prettier": "3.0.3",
+		"prettier": "3.1.0",
 		"sinon": "17.0.1",
 		"tsx": "4.6.2",
 		"typescript": "5.3.2"
