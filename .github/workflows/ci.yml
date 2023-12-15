@@ -21,7 +21,7 @@ jobs:
               run: npm run lint
             - name: Check for copy and paste
               run: npm run copy:paste:detector
-            - uses: actions/upload-artifact@v3
+            - uses: actions/upload-artifact@v4
               with:
                   name: compiled-code
                   path: target/src/
