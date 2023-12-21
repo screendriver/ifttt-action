@@ -31,7 +31,7 @@
 		"eslint": "8.56.0",
 		"eslint-config-prettier": "9.1.0",
 		"eslint-plugin-ava": "14.0.0",
-		"eslint-plugin-prettier": "5.1.0",
+		"eslint-plugin-prettier": "5.1.1",
 		"jscpd": "3.5.10",
 		"prettier": "3.1.1",
 		"sinon": "17.0.1",
