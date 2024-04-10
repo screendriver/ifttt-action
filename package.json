@@ -36,6 +36,6 @@
 		"prettier": "3.2.5",
 		"sinon": "17.0.1",
 		"tsx": "4.7.2",
-		"typescript": "5.4.4"
+		"typescript": "5.4.5"
 	}
 }
