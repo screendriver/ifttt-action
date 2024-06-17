@@ -20,6 +20,8 @@
 	},
 	"devDependencies": {
 		"@ava/typescript": "5.0.0",
+		"@jscpd/finder": "4.0.1",
+		"@jscpd/html-reporter": "4.0.1",
 		"@types/got": "9.6.12",
 		"@types/sinon": "17.0.3",
 		"@typescript-eslint/eslint-plugin": "7.13.0",
