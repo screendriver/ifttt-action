@@ -15,7 +15,7 @@
 	},
 	"dependencies": {
 		"@actions/core": "1.11.1",
-		"got": "11.8.6",
+		"got": "14.4.3",
 		"tslib": "2.7.0"
 	},
 	"devDependencies": {
