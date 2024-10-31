@@ -16,7 +16,7 @@
 	"dependencies": {
 		"@actions/core": "1.11.1",
 		"got": "11.8.6",
-		"tslib": "2.8.0"
+		"tslib": "2.8.1"
 	},
 	"devDependencies": {
 		"@ava/typescript": "5.0.0",
