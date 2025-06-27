@@ -36,7 +36,7 @@
 		"eslint-plugin-prettier": "5.5.0",
 		"jscpd": "4.0.5",
 		"prettier": "3.6.2",
-		"sinon": "19.0.5",
+		"sinon": "21.0.0",
 		"tsx": "4.20.3",
 		"typescript": "5.8.3"
 	}
