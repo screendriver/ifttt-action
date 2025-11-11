@@ -22,7 +22,7 @@ jobs:
               run: npm run lint
             - name: Check for copy and paste
               run: npm run copy:paste:detector
-            - uses: actions/upload-artifact@v4
+            - uses: actions/upload-artifact@v5
               with:
                   name: compiled-code
                   path: target/src/
@@ -39,14 +39,14 @@ jobs:
                   node-version: '18.x'
             - name: Install dependencies
               run: npm clean-install
-            - uses: actions/download-artifact@v4
+            - uses: actions/download-artifact@v6
               with:
                   name: compiled-code
                   path: target/src/
             - name: Build application
               run: npm run build
             - name: Upload built application as artifact
-              uses: actions/upload-artifact@v4
+              uses: actions/upload-artifact@v5
               with:
                   name: application
                   path: target/dist/
