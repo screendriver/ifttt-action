@@ -23,7 +23,7 @@
 		"@jscpd/finder": "4.0.4",
 		"@jscpd/html-reporter": "4.0.4",
 		"@types/got": "9.6.12",
-		"@types/sinon": "17.0.4",
+		"@types/sinon": "21.0.1",
 		"@typescript-eslint/eslint-plugin": "8.58.0",
 		"@typescript-eslint/parser": "8.58.0",
 		"@vercel/ncc": "0.38.4",
@@ -36,7 +36,7 @@
 		"eslint-plugin-prettier": "5.5.5",
 		"jscpd": "4.0.8",
 		"prettier": "3.6.2",
-		"sinon": "19.0.5",
+		"sinon": "21.0.3",
 		"tsx": "4.21.0",
 		"typescript": "5.9.3"
 	}
