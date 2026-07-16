@@ -34,7 +34,7 @@
 		"eslint-config-prettier": "9.1.2",
 		"eslint-plugin-ava": "14.0.0",
 		"eslint-plugin-prettier": "5.5.6",
-		"jscpd": "4.0.9",
+		"jscpd": "4.2.5",
 		"prettier": "3.9.5",
 		"sinon": "19.0.5",
 		"tsx": "4.23.1",
